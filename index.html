@@ -7,8 +7,31 @@
 </head>
 
 <body>
-    <p id="demo">Good Evening!</p>
-    <p id="timeDemo">Time Here</p>
+    <!-- <p id="demo">Good Evening!</p>
+    <p id="timeDemo">Time Here</p> -->
+    <!-- Switch Statement start -->
+    <!-- <label for="weather">Select the weather type today: </label>
+    <select id="weather">
+        <option value="">--Make a choice--</option>
+        <option value="sunny">Sunny</option>
+        <option value="rainy">Rainy</option>
+        <option value="snowing">Snowing</option>
+        <option value="overcast">Overcast</option>
+    </select>
+
+    <p></p> -->
+    <!-- Switch statement end -->
+
+    <!-- Ternary operator start -->
+    <label for="theme">Select theme: </label>
+    <select id="theme">
+        <option value="white">White</option>
+        <option value="black">Black</option>
+    </select>
+
+    <h1>This is my website</h1>
+    <!-- Ternary operator end -->
+
     <script>
         console.log("Hello, World!")
         function add7(number) {
@@ -57,28 +80,28 @@
         */
 
         //passes "Good Day!" for "Good Evening!" in p#demo if the time is currently before 6PM
-        if (new Date().getHours() < 18) {
-            document.getElementById("demo").innerHTML = "Good Day!";
-        }
+        // if (new Date().getHours() < 18) {
+        //     document.getElementById("demo").innerHTML = "Good Day!";
+        // }
 
-        if (new Date().getHours() < 12) {
-            document.getElementById("timeDemo").innerHTML = "Good Morning";
-        } else if (new Date().getHouse() = 12) {
-            document.getElementById("timeDemo").innerHTML = "Good Noon";
-        } else {
-            document.getElementById("timeDemo").innerHTML = "Good Evening";
-        }
-        //cleaner
-        const time = new Date().getHours();
-        let greeting;
-        if (time < 10) {
-            greeting = "Good morning";
-        } else if (time < 20) {
-            greeting = "Good day";
-        } else {
-            greeting = "Good evening"
-        }
-        document.getElementById("timeDemo").innerHTML = greeting;
+        // if (new Date().getHours() < 12) {
+        //     document.getElementById("timeDemo").innerHTML = "Good Morning";
+        // } else if (new Date().getHouse() = 12) {
+        //     document.getElementById("timeDemo").innerHTML = "Good Noon";
+        // } else {
+        //     document.getElementById("timeDemo").innerHTML = "Good Evening";
+        // }
+        // //cleaner
+        // const time = new Date().getHours();
+        // let greeting;
+        // if (time < 10) {
+        //     greeting = "Good morning";
+        // } else if (time < 20) {
+        //     greeting = "Good day";
+        // } else {
+        //     greeting = "Good evening"
+        // }
+        // document.getElementById("timeDemo").innerHTML = greeting;
 
         //logical operators
 
@@ -116,12 +139,53 @@
                 alert("Canceled");
             } else {
                 alert("Wrong password.");
-            } d
+            }
         } else if (visitor === "" || visitor === null) {
             alert("Canceled");
         } else {
             alert("I don't know you");
         }
+
+        //Switch Statement
+        // const select = document.querySelector("select");
+        // const para = document.querySelector("p");
+
+        // select.addEventListener("change", setWeather);
+
+        // function setWeather() {
+        //     const choice = select.value;
+
+        //     switch (choice) {
+        //         case "sunny":
+        //             para.textContent = "It is nice and sunny outside today";
+        //             break;
+        //         case "rainy":
+        //             para.textContent = "Rain is falling outside";
+        //             break;
+        //         case "snowing":
+        //             para.textContent = "Snow is coming down";
+        //             break;
+        //         case "overcast":
+        //             para.textContent = "It isn't raining, but the sky is grey and gloomy";
+        //             break;
+        //         default:
+        //             para.textContent = "";
+
+        //     }
+        // }
+
+        // ternary operator
+        const select = document.querySelector("select");
+        const html = document.querySelector("html");
+        document.body.style.padding = "10px";
+
+        function update(bgColor, textColor) {
+            html.style.backgroundColor = bgColor;
+            html.style.color = textColor;
+        }
+
+        select.addEventListener("change", () => (select.value === "black") ? update("black", "white") : update("white", "black"));
+
 
     </script>
 </body>
