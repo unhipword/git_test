@@ -7,6 +7,8 @@
 </head>
 
 <body>
+    <p id="demo">Good Evening!</p>
+    <p id="timeDemo">Time Here</p>
     <script>
         console.log("Hello, World!")
         function add7(number) {
@@ -28,9 +30,98 @@
         console.log(capitalize('TEST'));
 
         //number object attempts to convert data that passes through into a number type
-        const myString = "Jake";
+        const myString = "123"; //oddly still works with letters. Why?
         const myNum = Number(myString);
         console.log(typeof myNum);
+
+        //converts into a string
+        const myNum2 = 123;
+        const myString2 = myNum.toString();
+        console.log(typeof myString2);
+
+        //cannot get these variables to insert into the string. I'm not sure why, I followed MDN javascript.info exactly.
+        const song = "Fight the Youth";
+        const score = 9;
+        const highestScore = 10;
+        const output = "I like the song ${song}. I gave it a score of ${score/highestScore * 100}%.";
+        console.log(output);
+
+        // = - assignment == - convert type then check for data equality === - strict equality same type
+        /*
+        alert(1 >= "1"); //true
+        alert('01' == 1); // true string 01 converted to number 1
+
+        // == cannot differentiate between 0 and false but === can
+        alert(0 == false); //true
+        alert(0 === false); //false
+        */
+
+        //passes "Good Day!" for "Good Evening!" in p#demo if the time is currently before 6PM
+        if (new Date().getHours() < 18) {
+            document.getElementById("demo").innerHTML = "Good Day!";
+        }
+
+        if (new Date().getHours() < 12) {
+            document.getElementById("timeDemo").innerHTML = "Good Morning";
+        } else if (new Date().getHouse() = 12) {
+            document.getElementById("timeDemo").innerHTML = "Good Noon";
+        } else {
+            document.getElementById("timeDemo").innerHTML = "Good Evening";
+        }
+        //cleaner
+        const time = new Date().getHours();
+        let greeting;
+        if (time < 10) {
+            greeting = "Good morning";
+        } else if (time < 20) {
+            greeting = "Good day";
+        } else {
+            greeting = "Good evening"
+        }
+        document.getElementById("timeDemo").innerHTML = greeting;
+
+        //logical operators
+
+        /*
+        alert(true || true); // true
+        alert(false || true);//true
+        alert(true || false);//true
+        alert(false || false);//false
+        */
+
+        /*
+        let hour = 9;
+        let isWeekend = true;
+        if (hour < 10 || hour > 18 || isWeekend) {
+            alert("the office is closed.");
+        }
+
+
+        let hour2 = 12;
+        let minute = 30;
+
+        if (hour2 == 12 && minute == 30) {
+            alert("the time is 12:30");
+        }
+
+        alert(null || 2 && 3 || 4);
+        */
+        const visitor = prompt("Who's there?", "");
+
+        if (visitor === "Admin" || visitor === "admin") {
+            let password = prompt("Password?", "")
+            if (password === "TheMaster") {
+                alert("Welcome, Master");
+            } else if (password === "" || password === null) {
+                alert("Canceled");
+            } else {
+                alert("Wrong password.");
+            } d
+        } else if (visitor === "" || visitor === null) {
+            alert("Canceled");
+        } else {
+            alert("I don't know you");
+        }
 
     </script>
 </body>
